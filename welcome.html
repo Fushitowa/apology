@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for you</title>
+<link rel="stylesheet" href="css/welcome.css">
+</head>
+<body>
+
+<div class="floaties" id="floaties"></div>
+
+<div class="scene">
+  <h1>hi, my baby 🌸</h1>
+  <p>I made you a little something. It won't take long just tap through when you're ready.</p>
+  <a href="apology.html" class="btn">open it</a>
+</div>
+
+<script>
+  const symbols = ['🩷','✨','🐾','💗'];
+  const layer = document.getElementById('floaties');
+  function spawn() {
+    const el = document.createElement('span');
+    el.className = 'floaty';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
+    el.style.animationDuration = (6 + Math.random() * 3) + 's';
+    layer.appendChild(el);
+    setTimeout(() => el.remove(), 9000);
+  }
+  setInterval(spawn, 700);
+  spawn();
+</script>
+
+</body>
+</html>

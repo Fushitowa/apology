@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a little gift</title>
+<link rel="stylesheet" href="css/catgift.css">
+</head>
+<body>
+
+<div class="confetti-layer" id="confetti"></div>
+
+<div class="scene">
+  <div class="frame">
+    <img src="images/catgift.jpg" alt="a cat with a gift">
+  </div>
+
+  <h1>but here's a gift 🎁</h1>
+  <p>to make up for it, and to remind you how much you mean to me.</p>
+  <p>thank you for being patient with me. I don't take it for granted.</p>
+
+  <div class="signature">yours, always 🩷</div>
+</div>
+
+<script>
+  const colors = ['#ff7fa0', '#ffc65c', '#e3d5f7', '#ffd9e3', '#ef5c85'];
+  const layer = document.getElementById('confetti');
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('span');
+    el.className = 'confetto';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+    el.style.animationDelay = (Math.random() * 1.2) + 's';
+    el.style.animationDuration = (2.6 + Math.random() * 1.4) + 's';
+    layer.appendChild(el);
+  }
+</script>
+
+</body>
+</html>

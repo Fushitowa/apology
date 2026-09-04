@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap');
+
+:root {
+  --cream: #fff6f2;
+  --blush: #ffd9e3;
+  --lavender: #e3d5f7;
+  --rose: #ff7fa0;
+  --rose-deep: #ef5c85;
+  --plum: #4a3547;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  font-family: 'Nunito', sans-serif;
+  color: var(--plum);
+  background: radial-gradient(circle at 80% 10%, var(--lavender), transparent 55%),
+              radial-gradient(circle at 10% 90%, var(--blush), transparent 55%);
+  background-color: var(--cream);
+}
+
+.letter {
+  background: var(--white);
+  max-width: 440px;
+  width: 100%;
+  border-radius: 28px;
+  padding: 40px 34px 34px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(74, 53, 71, 0.14);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in .8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes rise-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.portrait {
+  width: 220px;
+  height: 220px;
+  padding: 10px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border-radius: 18px;
+  border: 5px solid var(--blush);
+  box-shadow: 0 10px 20px rgba(74, 53, 71, 0.12);
+  animation: sway 5s ease-in-out infinite;
+}
+
+.portrait img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+.letter h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--rose-deep);
+  margin: 0 0 16px;
+}
+
+.letter p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  text-align: left;
+}
+
+.signature {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: var(--rose-deep);
+  margin: 18px 0 30px;
+  text-align: right;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--rose);
+  padding: 13px 30px;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(239, 92, 133, 0.3);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 26px rgba(239, 92, 133, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter, .portrait { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
